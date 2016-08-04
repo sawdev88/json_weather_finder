@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Oswald', sans-serif;
+  color: #fff;
+}
+
+*:focus {
+  outline: none;
+}
+
+body {
+  height: 100%;
+  background: #92F2FF;
+}
+
+h1 {
+  font-family: 'Lobster', cursive;
+  font-size: 88px;
+  text-align: center;
+}
+
+.welcome {
+  display: none;
+  position: relative;
+  margin-top: 30%;
+  animation-name: slide;
+	animation-duration: 5s;
+	animation-timing-function: ease-in;
+	animation-iteration-count: 1;
+}
+
+@keyframes slide {
+  0% { transform: translateX(100px) ;}
+  100% { transform: translateX(900px); }
+}
+
+.main-content {
+  display: none;
+  width: 800px;
+  margin: 48px auto;
+  text-align: center;
+}
+
+.main-content h3 {
+  font-family: 'Lobster', cursive;
+  font-size: 3em;
+  margin-bottom: 12px;
+}
+
+.hero i {
+  font-size: 2em;
+}
+
+.search-text {
+  color: #333;
+  margin: 24px auto;
+  width: 50%;
+  padding: 8px 32px;
+  font-size: 16px;
+  border: 1px solid rgba(240, 240, 240, 0.8);
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+.search-button {
+  background: #ff9f92;
+  font-size: 16px;
+  padding: 8px 32px;
+  border: 1px solid rgba(240, 240, 240, 0.8);;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.search-button:hover {
+  cursor: pointer;
+}
