@@ -1,33 +1,59 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Weather Finder</title>
-    <link href='https://fonts.googleapis.com/css?family=Oswald|Lobster' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="main.css">
-  </head>
-  <body>
 
-    <section class="welcome">
-      <h1><i class="fa fa-cloud" aria-hidden="true"></i>What's The Weather?</h1>
+<head>
+  <meta charset="utf-8">
+  <title>Weather Finder</title>
+  <link href='https://fonts.googleapis.com/css?family=Oswald|Lobster' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+  <section class="welcome">
+    <h1><i class="fa fa-cloud" aria-hidden="true"></i>What's The Weather?</h1>
+  </section>
+
+  <main class="main-content">
+    <div class="hero">
+      <h3>What's The Weather?</h3>
+      <i class=" fa fa-sun-o" aria-hidden="true"></i>
+    </div>
+
+    <form class="search-weather">
+      <input class="search-text" type="search" placeholder="Enter a city:" autofocus="">
+      <input class="search-button" type="button" value="Get weather!">
+    </form>
+
+    <div class="validator">
+      <h2>Please Enter a valid city!</h2>
+    </div>
+
+    <section class="search-container">
+      <h2 class="city-name"></h2>
+      <div class="display-left">
+        <h2 class="weather-desc"></h2>
+        <img class="weather-icon" alt="Weather Icon">
+        <h2 class="weather-temp">Current Temp: <span></span></h2>
+        <p class="weather-hi-lo">Max: <span class="max-temp"></span> Min: <span class="min-temp"></span></p>
+        <h2 class="weather-humidity">Humidity: <span></span></h2>
+        <h2 class="weather-pressure">Pressure: <span></span></h2>
+      </div>
+      <div class="display-right">
+        <dl>
+          <dt>Wind</dt>
+          <dd class="deg">Deg: <span></span></dd>
+          <dd class="gust">Gust: <span></span></dd>
+          <dd class="speed">Speed: <span></span></dd>
+        </dl>
+      </div>
     </section>
 
-    <main class="main-content">
-      <div class="hero">
-        <h3>What's The Weather?</h3>
-        <i class=" fa fa-cloud" aria-hidden="true"></i>
-      </div>
-
-      <form class="search-weather">
-        <input class="search-text" type="search" placeholder="Enter a city:">
-        <input class="search-button" type="button" value="Get weather!">
-      </form>
-
-      <h2 class="city-name"></h2>
-    </main>
+  </main>
 
   <script src="https://use.fontawesome.com/09efc92c6d.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="script.js" charset="utf-8"></script>
-  </body>
+</body>
+
 </html>

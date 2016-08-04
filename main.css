@@ -26,20 +26,26 @@ h1 {
   position: relative;
   margin-top: 30%;
   animation-name: slide;
-	animation-duration: 5s;
-	animation-timing-function: ease-in;
-	animation-iteration-count: 1;
+  animation-duration: 5s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
 }
 
 @keyframes slide {
-  0% { transform: translateX(100px) ;}
-  100% { transform: translateX(900px); }
+  0% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(900px);
+  }
 }
 
 .main-content {
   display: none;
+  position: relative;
+  top: 300px;
   width: 800px;
-  margin: 48px auto;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -50,14 +56,25 @@ h1 {
 }
 
 .hero i {
+  position: relative;
   font-size: 2em;
+  transform: rotate(1100deg);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .search-text {
   color: #333;
   margin: 24px auto;
   width: 50%;
-  padding: 8px 32px;
+  padding: 8px 30px;
   font-size: 16px;
   border: 1px solid rgba(240, 240, 240, 0.8);
   border-top-left-radius: 50px;
@@ -68,11 +85,71 @@ h1 {
   background: #ff9f92;
   font-size: 16px;
   padding: 8px 32px;
-  border: 1px solid rgba(240, 240, 240, 0.8);;
+  border: 1px solid rgba(240, 240, 240, 0.8);
+  ;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
 }
 
 .search-button:hover {
   cursor: pointer;
+}
+
+.search-container {
+  display: none;
+}
+
+.city-name {
+  text-decoration: underline;
+  font-size: 2em;
+  margin-bottom: 16px;
+}
+
+.display-left {
+  width: 50%;
+  float: left;
+  border-right: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.search-container span {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.weather-desc {
+  display: inline;
+}
+
+.weather-icon {
+  vertical-align: middle;
+}
+
+.weather-humidity {
+  margin-top: 16px;
+}
+
+.display-right {
+  width: 50%;
+  float: right;
+  text-align: left;
+  padding: 16px 0 0 10%;
+}
+
+dt {
+  text-decoration: underline;
+}
+
+dd {
+  margin-left: 16px;
+}
+
+.validator {
+  position: fixed;
+  padding: 8px;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  margin: 0 auto;
+  font-size: 16px;
+  background: #92bcff;
 }
