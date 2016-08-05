@@ -137,13 +137,18 @@ dd {
   margin-left: 16px;
 }
 
+.weather-pressure {
+  margin: 16px 0 0 -8px;
+}
+
 .validator {
+  display: none;
+  text-align: center;
   position: fixed;
   padding: 8px;
   top: 0;
   width: 100%;
   right: 0;
-  display: none;
   margin: 0 auto;
   font-size: 16px;
   background: #92bcff;
@@ -168,7 +173,7 @@ dd {
   }
   main.main-content {
     position: absolute;
-    top: 8px;
+    top: 80px;
     width: 100%;
     margin: 0;
   }
@@ -197,6 +202,9 @@ dd {
   .main-content h3 {
     font-size: 32px;
   }
+  .search-container {
+    margin-top: 8px;
+  }
   .display-left {
     float: none;
     border: none;
@@ -214,5 +222,8 @@ dd {
   }
   dd {
     margin-left: 0;
+  }
+  .weather-pressure {
+    margin-top: 8px;
   }
 }

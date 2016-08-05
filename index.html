@@ -11,6 +11,10 @@
 
 <body>
 
+  <section class="validator">
+    <h2>Please Enter a valid city!</h2>
+  </section>
+
   <section class="welcome">
     <h1><i class="fa fa-cloud" aria-hidden="true"></i>What's The Weather?</h1>
   </section>
@@ -22,13 +26,9 @@
     </div>
 
     <form class="search-weather">
-      <input class="search-text" type="search" placeholder="Enter a city:" autofocus="">
+      <input class="search-text" type="search" placeholder="Enter a city or try 'me'" autofocus="">
       <input class="search-button" type="button" value="Get weather!">
     </form>
-
-    <div class="validator">
-      <h2>Please Enter a valid city!</h2>
-    </div>
 
     <section class="search-container">
       <h2 class="city-name"></h2>
@@ -38,7 +38,6 @@
         <h2 class="weather-temp">Current Temp: <span></span></h2>
         <p class="weather-hi-lo">Max: <span class="max-temp"></span> Min: <span class="min-temp"></span></p>
         <h2 class="weather-humidity">Humidity: <span></span></h2>
-        <h2 class="weather-pressure">Pressure: <span></span></h2>
       </div>
       <div class="display-right">
         <dl>
@@ -47,6 +46,7 @@
           <dd class="gust">Gust: <span></span></dd>
           <dd class="speed">Speed: <span></span></dd>
         </dl>
+        <h2 class="weather-pressure">Pressure: <span></span></h2>
       </div>
     </section>
 
