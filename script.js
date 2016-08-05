@@ -1,5 +1,4 @@
-var
-  colors = ['#92bcff', '#d692ff', '	#ffd692', '	#ffa092'],
+let
   userInput,
   lat,
   long,
@@ -10,11 +9,19 @@ var
   $cityName = $('.city-name'),
   key = '22e0a3505a1754a4f9b38c2fe79e22c2';
 
-function randomColor(arr) {
-  var randomNumber = Math.floor(Math.random() * arr.length);
-  return arr[randomNumber];
-}
 
+//Set random icon color
+var randomColor = (function() {
+  var colors = ['#92bcff', '#d692ff', '	#ffd692', '	#ffa092']
+  var randomNumber = Math.floor(Math.random() * colors.length);
+
+  return function() {
+    return colors[randomNumber];
+  };
+
+});
+
+//Prevent enter key from reloading the page
 function preventEnter() {
   $(window).keydown(function(e) {
     if (e.keyCode == 13) {
@@ -23,32 +30,39 @@ function preventEnter() {
   });
 }
 
+// Round numbers
 function round(item) {
   return Math.round(item);
 }
 
+// Animaite the main content up after initial search
 function animateTop(item) {
   $main.animate({
     top: String(item)
   });
 }
 
+// Get JSON and set all values on the page. Show error if invalid search
 function setData(json) {
 
   if (json.message === 'Error: Not found city') {
 
+    // Show error for invalid search
     $('.validator').fadeIn('slow').delay(700).fadeOut();
 
   } else {
 
-    $('.hero i').hide().css('color', randomColor(colors)).fadeIn(1000);
+    // Give icon random color after search
+    $('.hero i').hide().css('color', randomColor()).fadeIn(1000);
 
+    // Animate page after initia search
     if ($(window).width() > 480) {
       animateTop(120);
     } else {
       animateTop(8);
     }
 
+    // Set weather content | Display Left
     $('.search-container').hide().fadeIn();
     $cityName.text(json.name);
     $('.weather-desc').text(json.weather[0].main);
@@ -58,6 +72,7 @@ function setData(json) {
     $('.min-temp').text(round(json.main.temp_min) + '°');
     $('.weather-humidity span').text(json.main.humidity);
 
+    // Display Right
     $('.deg span').text(json.wind.deg);
     $('.gust span').text(json.wind.gust);
     $('.speed span').text(json.wind.speed);
@@ -66,7 +81,7 @@ function setData(json) {
 }
 
 $(function() {
-
+  // Prevent page reload
   preventEnter();
 
   //Show and hide welcome
@@ -75,12 +90,11 @@ $(function() {
   //Show Main Content
   $main.delay(2000).fadeIn(800);
 
-  //Flash try 'me'
-  $('.try-type').fadeIn();
-
+  // Click search to invoke json parsing and display results
   $searchButton.on('click', function() {
     userInput = $searchText.val();
 
+    // Invoke geolocation
     if (userInput === 'me') {
 
       // Ger user's location
@@ -88,7 +102,7 @@ $(function() {
         lat = position.coords.latitude;
         long = position.coords.longitude;
 
-        //User user's location to get API
+        //Use user's location to get API
         $.getJSON('http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + long + '&APPID=' + key + '&units=imperial', function(json) {
           setData(json);
         })
